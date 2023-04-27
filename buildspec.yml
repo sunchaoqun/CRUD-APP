@@ -49,4 +49,7 @@ batch:
       buildspec: 
         - matrix1.yml
         - matrix2.yml
-
+      env:
+        variables:
+          MY_VAR:
+            - VALUE1
