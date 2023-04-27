@@ -1,23 +1,57 @@
 # Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
 version: 0.2
 
-phases:
-  install:
-    runtime-versions:
-      nodejs: 12
-  pre_build:
-    commands:
-      - echo Installing source NPM dependencies...
-  build:
-    commands:
-      - echo Build started on `date`
-      - echo Compiling the Node.js code
-  post_build:
-    commands:
-      - echo Build completed on `date`
-# Include only the files required for your application to run.
-# Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages 
-# used only for building and testing.
-artifacts:
-  files:
-    - '**/*'
+batch:
+  fast-fail: false
+
+  # build-graph:
+
+  #   - identifier: build1
+  #     env:
+  #       variables:
+  #         BUILD_ID: build1
+  #     ignore-failure: false
+
+  #   - identifier: build2
+  #     buildspec: build2.yml
+  #     env:
+  #       variables:
+  #         BUILD_ID: build2
+  #     depend-on:
+  #       - build1
+
+  #   - identifier: build3
+  #     env:
+  #       variables:
+  #         BUILD_ID: build3
+  #     depend-on:
+  #       - build2
+      
+  # build-list:
+
+  #   - identifier: build1
+  #     env:
+  #       variables:
+  #         BUILD_ID: build1
+  #     ignore-failure: false
+
+  #   - identifier: build2
+  #     buildspec: build2.yml
+  #     env:
+  #       variables:
+  #         BUILD_ID: build2
+  #     ignore-failure: true
+
+  build-matrix:
+    static:
+      ignore-failure: false
+    dynamic:
+      buildspec: 
+        - matrix1.yml
+        - matrix2.yml
+      env:
+        variables:
+          MY_VAR:
+            - VALUE1
+            - VALUE2
+            - VALUE3
