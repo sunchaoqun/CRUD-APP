@@ -1,5 +1,8 @@
 # add nodejs to yum
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
+yum clean all && yum update
+
+curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+
 yum install nodejs -y #default-jre ImageMagick
 
 # install pm2 module globaly
