@@ -53,3 +53,23 @@ batch:
         variables:
           MY_VAR:
             - VALUE1
+            
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - git branch --show-current 
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      - echo "MY_VAR is ${MY_VAR}"
+  post_build:
+    commands:
+
+artifacts:
+  files:
+    - '**/*'
