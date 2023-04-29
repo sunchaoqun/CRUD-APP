@@ -64,6 +64,7 @@ phases:
 #       - git branch --show-current 
   build:
     commands:
+      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
       - echo Build started on `date`
       - echo Compiling the Node.js code
       - echo "MY_VAR is ${MY_VAR}"
