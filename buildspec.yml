@@ -55,12 +55,12 @@ batch:
             - VALUE1
             
 phases:
-  install:
-    runtime-versions:
-      nodejs: 12
-    commands:
-        - export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
-        - git branch --show-current
+#   install:
+#     runtime-versions:
+#       nodejs: 12
+#     commands:
+#         - export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+#         - git branch --show-current
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
