@@ -55,7 +55,7 @@ batch:
             - VALUE1
             
 phases:
-  install:
+#   install:
 #     runtime-versions:
 #       nodejs: 12
   pre_build:
