@@ -55,9 +55,12 @@ batch:
             - VALUE1
             
 phases:
-#   install:
-#     runtime-versions:
-#       nodejs: 12
+  install:
+    runtime-versions:
+      nodejs: 12
+  commands:
+      - git branch --show-current
+  
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
