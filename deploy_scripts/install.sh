@@ -3,7 +3,7 @@ yum clean all && yum update
 
 curl -sL https://rpm.nodesource.com/setup_14.x | bash -
 
-yum install nodejs -y #default-jre ImageMagick
+yum install nodejs nc -y #default-jre ImageMagick
 
 # install pm2 module globaly
 npm install -g pm2
