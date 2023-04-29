@@ -48,7 +48,7 @@ batch:
     dynamic:
       buildspec: 
         - matrix1.yml
-        - matrix2.yml
+#         - matrix2.yml
       env:
         variables:
           MY_VAR:
@@ -56,12 +56,12 @@ batch:
             
 phases:
   install:
-    runtime-versions:
-      nodejs: 12
+#     runtime-versions:
+#       nodejs: 12
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
-      - git branch --show-current 
+#       - git branch --show-current 
   build:
     commands:
       - echo Build started on `date`
